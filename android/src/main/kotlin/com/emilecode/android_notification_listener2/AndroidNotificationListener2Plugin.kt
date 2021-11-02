@@ -65,11 +65,11 @@ class AndroidNotificationListener2Plugin private constructor(private val context
   internal inner class NotificationReceiver : BroadcastReceiver() {
     val TAG = "NOTIFICATION_RECEIVER"
     override fun onReceive(context: Context, intent: Intent) {
-      val packageName = intent.getStringExtra(NotificationListener.NOTIFICATION_PACKAGE_NAME)
-      val packageMessage = intent.getStringExtra(NotificationListener.NOTIFICATION_PACKAGE_MESSAGE)
-      val packageText = intent.getStringExtra(NotificationListener.NOTIFICATION_PACKAGE_TEXT)
-      val packageExtra = intent.getStringExtra(NotificationListener.NOTIFICATION_PACKAGE_EXTRA)
-      val map = HashMap<String, Any>()
+      val packageName = intent.getStringExtra(NotificationListener.NOTIFICATION_PACKAGE_NAME).toString()
+      val packageMessage = intent.getStringExtra(NotificationListener.NOTIFICATION_PACKAGE_MESSAGE).toString()
+      val packageText = intent.getStringExtra(NotificationListener.NOTIFICATION_PACKAGE_TEXT).toString()
+      val packageExtra = intent.getStringExtra(NotificationListener.NOTIFICATION_PACKAGE_EXTRA).toString()
+      val map = HashMap<String, String?>()
       map["packageName"] = packageName
       map["packageMessage"] = packageMessage
       map["packageText"] = packageText
